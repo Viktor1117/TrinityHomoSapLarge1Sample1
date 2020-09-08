@@ -6,4 +6,7 @@
 #SBATCH -t 10:00:00
 #SBATCH -J LinusTrinity
 
-singularity exec /proj/snic2020-15-186/LinusBenchmark/Containers/trinity_latest.sif Trinity --seqType fq --max_memory 96G --CPU 15  --left /proj/snic2020-15-186/LinusBenchmark/data/HomoSap/Large1_ENCSR362HMX/sample1/homosapLarge1Left.fastq.gz --right /proj/snic2020-15-186/LinusBenchmark/data/HomoSap/Large1_ENCSR362HMX/sample1/homosapLarge2Right.fastq.gz
+singularity exec /proj/snic2020-15-186/LinusBenchmark/Containers/trinity_latest.sif Trinity --seqType fq --max_memory 96G --CPU 15  --left /proj/snic2020-15-186/LinusBenchmark/data/HomoSap/Large1_ENCSR362HMX/sample1/homosapLarge1Left.fastq.gz --right /proj/snic2020-15-186/LinusBenchmark/data/HomoSap/Large1_ENCSR362HMX/sample1/homosapLarge2Right.fastq.gz --output $TMPDIR/outputTrinity/
+
+cp $TMPDIR/outputTrinity/"NAMN".fasta /proj/snic2020-15-186/LinusBenchmark/output/outputTrinity/HomoSap/Large1/sample1/
+
